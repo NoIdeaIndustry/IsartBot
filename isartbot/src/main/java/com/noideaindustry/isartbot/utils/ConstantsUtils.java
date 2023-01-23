@@ -15,4 +15,7 @@ public class ConstantsUtils {
     public static String getToken() {
         return config.get("BOT_TOKEN");
     }
+    public static String getRedisPort() {
+        return config.get("REDIS_PORT");
+    }
 }

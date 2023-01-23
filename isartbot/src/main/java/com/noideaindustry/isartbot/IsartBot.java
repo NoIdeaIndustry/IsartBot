@@ -1,6 +1,9 @@
 package com.noideaindustry.isartbot;
 
 import com.noideaindustry.isartbot.commands.SlashCommandListener;
+import com.noideaindustry.isartbot.redis.RedisHandler;
+import com.noideaindustry.isartbot.redis.RedisServer;
+import com.noideaindustry.isartbot.redis.utils.RedisUtils;
 import com.noideaindustry.isartbot.utils.ConstantsUtils;
 import com.noideaindustry.isartbot.utils.EmojiUtils;
 import net.dv8tion.jda.api.JDA;
@@ -11,9 +14,14 @@ import net.dv8tion.jda.api.utils.cache.CacheFlag;
 
 public class IsartBot {
     private static JDA jda;
+    private final RedisUtils redisUtils;
 
     public IsartBot() {
         System.out.println("[System - IsartBot] Starting program...\n");
+
+        final RedisServer redisServer = new RedisServer("localhost", Integer.parseInt(ConstantsUtils.getRedisPort()));
+        final RedisHandler redisHandler = new RedisHandler(redisServer.getPool());
+        this.redisUtils = new RedisUtils(redisHandler);
 
         try {
             final JDABuilder builder = JDABuilder.create(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_EMOJIS_AND_STICKERS, GatewayIntent.SCHEDULED_EVENTS);
@@ -33,5 +41,9 @@ public class IsartBot {
 
     public static JDA getJda() {
         return jda;
+    }
+
+    public RedisUtils getRedisUtils() {
+        return redisUtils;
     }
 }
