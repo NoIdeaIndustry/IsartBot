@@ -84,7 +84,7 @@ public class FoodTruckSlashCommand implements ISlashCommand {
 
                 final EmbedBuilder embed = EmbedCreator.createEmbed(
                         String.format("%sFood trucks list", EmojiUtils.COUVERT.getDisplay()),
-                        "",
+                        "Price range usually between 8€ - 15€",
                         embedFields.toArray(EmbedField[]::new)
                 );
 
