@@ -29,10 +29,10 @@ public class EmbedCreator {
     }
 
     public static void createField(final EmbedBuilder embed, final String firstValue, final String secondValue) {
-        embed.addField(firstValue, " • " + secondValue, false);
+        embed.addField(firstValue, secondValue, false);
     }
 
     public static void createField(final EmbedBuilder embed, final String firstValue, final String secondValue, final boolean sameLine) {
-        embed.addField(firstValue, " • " + secondValue, sameLine);
+        embed.addField(firstValue, secondValue, sameLine);
     }
 }

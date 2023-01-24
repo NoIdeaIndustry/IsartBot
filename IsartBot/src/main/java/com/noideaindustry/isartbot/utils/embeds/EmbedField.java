@@ -5,6 +5,12 @@ public class EmbedField {
     final String secondValue;
     final boolean sameLine;
 
+    public EmbedField(final String primaryValue, final String secondValue, final boolean sameLine, final boolean withSeparator) {
+        this.primaryValue = primaryValue;
+        this.secondValue = withSeparator ? " • " + secondValue : secondValue;
+        this.sameLine = sameLine;
+    }
+
     public EmbedField(final String primaryValue, final String secondValue, final boolean sameLine) {
         this.primaryValue = primaryValue;
         this.secondValue = secondValue;
@@ -15,12 +21,6 @@ public class EmbedField {
         this.primaryValue = primaryValue;
         this.secondValue = secondValue;
         this.sameLine = false;
-    }
-
-    public EmbedField(final String primaryValue, final boolean sameLine) {
-        this.primaryValue = primaryValue;
-        this.secondValue = "";
-        this.sameLine = sameLine;
     }
 
     public String getPrimaryValue() {

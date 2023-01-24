@@ -4,8 +4,10 @@ import net.dv8tion.jda.api.entities.emoji.Emoji;
 
 public enum EmojiUtils {
     BLANK("U+2800"),
-
-    CONVERT("U+1F37D"),
+    COUVERT("U+1F37D"),
+    CHICKEN("U+1F414"),
+    ALARM_CLOCK("U+23F0"),
+    FLOWING_HOURGLASS("U+23F3"),
     PIZZA("U+1F355"),
     BURGER("U+1F354"),
     BREAD("U+1FAD3"),

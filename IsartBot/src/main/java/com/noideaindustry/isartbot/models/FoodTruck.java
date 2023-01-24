@@ -1,16 +1,25 @@
 package com.noideaindustry.isartbot.models;
 
+
 import java.util.Date;
 
 public class FoodTruck {
-    private final String name;
     private final Date date;
-    private final String url;
+    private final String name;
+    private final String description;
+    private final String social;
+    private final FoodType type;
 
-    public FoodTruck(final String name, final Date date, final String url) {
-        this.name = name;
+    public FoodTruck(final Date date, final String name, final String description, final String social) {
         this.date = date;
-        this.url = url;
+        this.name = name;
+        this.description = description;
+        this.social = social;
+        this.type = FoodType.getTypeFromId(this.getDescription());
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public String getName() {
@@ -21,7 +30,11 @@ public class FoodTruck {
         return date;
     }
 
-    public String getUrl() {
-        return url;
+    public String getSocial() {
+        return social;
+    }
+
+    public FoodType getType() {
+        return type;
     }
 }
