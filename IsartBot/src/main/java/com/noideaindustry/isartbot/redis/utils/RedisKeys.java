@@ -1,7 +1,7 @@
 package com.noideaindustry.isartbot.redis.utils;
 
 public enum RedisKeys {
-    FOOD_TRUCK("foodtruck:");
+    STARBOARD("starboard:");
 
     private final String key;
 

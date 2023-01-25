@@ -4,6 +4,8 @@ import net.dv8tion.jda.api.entities.emoji.Emoji;
 
 public enum EmojiUtils {
     BLANK("U+2800"),
+    SPARKLES("U+2728"),
+    BOOM("U+1F4A5"),
     COUVERT("U+1F37D"),
     CHICKEN("U+1F414"),
     ALARM_CLOCK("U+23F0"),

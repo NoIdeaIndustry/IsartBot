@@ -28,6 +28,14 @@ public class EmbedCreator {
         return embed;
     }
 
+    public static EmbedBuilder createEmbed(final String title) {
+        return createEmbed(title, null, (EmbedField) null);
+    }
+
+    public static EmbedBuilder createEmbed(final String title, final String description) {
+        return createEmbed(title, description, (EmbedField) null);
+    }
+
     public static void createField(final EmbedBuilder embed, final String firstValue, final String secondValue) {
         embed.addField(firstValue, secondValue, false);
     }

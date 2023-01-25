@@ -1,6 +1,7 @@
 package com.noideaindustry.isartbot.commands;
 
 import com.noideaindustry.isartbot.commands.command.FoodTruckSlashCommand;
+import com.noideaindustry.isartbot.commands.command.StarboardSlashCommand;
 import com.noideaindustry.isartbot.commands.utils.ISlashCommand;
 import com.noideaindustry.isartbot.commands.utils.RSlashArgument;
 import net.dv8tion.jda.api.JDA;
@@ -20,6 +21,7 @@ public class SlashCommandHandler {
 
     public SlashCommandHandler() {
         this.addSlashCommand(new FoodTruckSlashCommand());
+        this.addSlashCommand(new StarboardSlashCommand());
     }
 
     private void addSlashCommand(final ISlashCommand slashCommand) {

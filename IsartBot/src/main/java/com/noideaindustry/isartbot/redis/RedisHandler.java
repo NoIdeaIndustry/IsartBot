@@ -12,8 +12,6 @@ public record RedisHandler(JedisPool pool) {
 
     public boolean deleteValue(final Jedis jedis, final RedisKeys key, final String identity) {
         try {
-            if (!this.existValue(jedis, key, identity)) return false;
-
             jedis.del(key.getKey() + identity);
             return true;
         } catch (JedisConnectionException e) {
@@ -23,7 +21,6 @@ public record RedisHandler(JedisPool pool) {
 
     public boolean addValue(final Jedis jedis, final RedisKeys key, final String identity, final String content) {
         try {
-            if (this.existValue(jedis, key, identity)) return false;
             jedis.set(key.getKey() + identity, content);
             return true;
         } catch (JedisConnectionException e) {
@@ -33,8 +30,6 @@ public record RedisHandler(JedisPool pool) {
 
     public boolean updateValue(final Jedis jedis, final RedisKeys key, final String identity, final String content) {
         try {
-            if (!this.existValue(jedis, key, identity)) return false;
-
             jedis.set(key.getKey() + identity, content);
             return true;
         } catch (JedisConnectionException e) {
